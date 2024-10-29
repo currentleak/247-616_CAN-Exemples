@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 	rfilter[1].can_id   = 0x480;
 	rfilter[1].can_mask = 0xFF0;
 
-	setsockopt(fdSocketCAN, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
+	setsockopt(fdSocketCAN, SOL_CAN_RAW, CAN_RAW_FILTER, rfilter, sizeof(rfilter));
 
 	nbytes = read(fdSocketCAN, &frame, sizeof(struct can_frame));
 
