@@ -44,6 +44,9 @@ int main(int argc, char *argv[]) //char **argv)
 		strcpy(ifr.ifr_name, argv[1]);
 	else strcpy(ifr.ifr_name, "vcan0" );
 
+    	//system("sudo ip link set can0 type can bitrate 100000");
+    	//system("sudo ifconfig can0 up");
+	
 	ioctl(fdSocketCAN, SIOCGIFINDEX, &ifr);
 	/* 	Alternativement, zéro comme index d'interface, permet de récupérer les paquets de toutes les interfaces CAN.
 	Avec l'index de l'interface, maintenant lier le socket à l'interface CAN
